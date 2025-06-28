@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sanchaari Canteen</title>
+    <link rel="stylesheet" href="login.css">
+    <script defer src="login.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="../asset/sanchaari-modified.jfif" alt="Sanchaari Canteen Logo">
+        </div>
+        <div class="title">Sanchaari Canteen</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Route</a></li>
+                <li><a href="#">Restaurants</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Blogs</a></li>
+            </ul>
+            <div class="user-controls">
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Signup</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Sanchaari Canteen</h2>
+        <h3>Login</h3>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Enter Email ID">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button type="submit" >Login</a></button>
+        </form>
+        <p id="error-message" style="color: red; display: none;">Please enter all fields correctly.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                let email = document.getElementById("email").value.trim();
+                let password = document.getElementById("password").value.trim();
+                let errorMessage = document.getElementById("error-message");
+    
+                // Email and password must not be empty
+                if (email === "" || password === "") {
+                    errorMessage.innerText = "All fields are required.";
+                    errorMessage.style.display = "block";
+                    event.preventDefault();
+                    return;
+                }
+    
+                // Email validation pattern
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    errorMessage.innerText = "Enter a valid email address.";
+                    errorMessage.style.display = "block";
+                    event.preventDefault();
+                    return;
+                }
+    
+                // Password must be at least 6 characters
+                if (password.length < 6) {
+                    errorMessage.innerText = "Password must be at least 6 characters.";
+                    errorMessage.style.display = "block";
+                    event.preventDefault();
+                    return;
+                }
+    
+                // Hide error message if validation passes
+                errorMessage.style.display = "none";
+    
+                // Redirect to another page (e.g., dashboard.html)
+                window.location.href = "home.html"; // Change this to your desired page
+    
+                // Prevent form submission (not needed since we're redirecting manually)
+                event.preventDefault();
+            });
+        });
+    </script>
+    
+</body>
+</html>

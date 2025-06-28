@@ -1,0 +1,60 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('background-food.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #204000;
+    color: white;
+    padding: 10px;
+}
+.navbar-brand {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Payment Box */
+.payment-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+.payment-box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Payment Options */
+.payment-option {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* UPI Icons */
+.upi-icons img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+/* Small Options */
+.small-options {
+    list-style: none;
+    padding-left: 0;
+}
+
+.small-options li {
+    font-size: 14px;
+    margin: 3px 0;
+}

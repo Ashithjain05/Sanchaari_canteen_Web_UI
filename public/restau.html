@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanchaari Canteen</title>
+    <link rel="stylesheet" href="restau.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <img
+          src="../asset/sanchaari-modified.jfif"
+          alt="Sanchaari Canteen Logo" />
+      </div>
+      <div class="title">Sanchaari Canteen</div>
+      <nav>
+        <ul>
+          <li><a href="../public/home.html">Home</a></li>
+          <li><a href="../public/route2.html">Route</a></li>
+          <li><a href="#" class="active">Restaurants</a></li>
+          <li><a href="../public/offers.html">Offers</a></li>
+          <li><a href="../public/blog.html">Blogs</a></li>
+        </ul>
+        <div class="user-controls">
+          <img src="../asset/pic.jfif" id="userLogo" alt="User Logo" />
+          <button class="logout-btn">
+            <a
+              href="../index.html"
+              style="color: #ffffff; text-decoration: none"
+              >Logout</a
+            >
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div>
+      <div class="container mt-4">
+        <h2 class="text-center text-warning border-2px solid">
+          Top Restaurants
+        </h2>
+        <div class="row" id="restaurant-list">
+          <!-- Restaurant cards will be inserted here dynamically -->
+        </div>
+      </div>
+
+      <script>
+        const restaurants = [
+          {
+            name: "Sri ShanthiSagar Hotel",
+            img: "../asset/shanthisargar.jfif",
+            link: "sri-shanthisagar.html",
+          },
+          {
+            name: "Udupi Krishna Bhojana",
+            img: "../asset/udupi.jfif",
+            link: "udupi-krishna.html",
+          },
+          {
+            name: "Hotel Sudha",
+            img: "../asset/sudha.jfif",
+            link: "Sudha.html",
+          },
+          { name: "AI Hotel", img: "../asset/a1.jfif", link: "A1.html" },
+          {
+            name: "Basil Leaf Hotel",
+            img: "../asset/basil leaf.jfif",
+            link: "basil-leaf.html",
+          },
+          {
+            name: "Hotel Sunitha",
+            img: "../asset/sunitha.jfif",
+            link: "Sunithahotel.html",
+          },
+          {
+            name: "BlueMoon Restaurant",
+            img: "../asset/blue.jfif",
+            link: "bluemoon.html",
+          },
+          {
+            name: "NAATI MANE",
+            img: "../asset/naati.jfif",
+            link: "naati-mane.html",
+          },
+          {
+            name: "Samudri Grand Veg",
+            img: "../asset/sam.jfif",
+            link: "samudri-grand.html",
+          },
+          {
+            name: "Tindi Box",
+            img: "../asset/tindi.jfif",
+            link: "tindi-box.html",
+          },
+          {
+            name: "Veg Guru",
+            img: "../asset/vegguru.jfif",
+            link: "veg-guru.html",
+          },
+          {
+            name: "Bilal Hotel",
+            img: "../asset/bilal.jfif",
+            link: "bilal-hotel.html",
+          },
+          {
+            name: "Jai Hind Hotel",
+            img: "../asset/jai.jfif",
+            link: "jai-hind.html",
+          },
+          {
+            name: "WoodLands Hotel",
+            img: "../asset/wood.jfif",
+            link: "woodlands.html",
+          },
+          {
+            name: "Prithvi Veg Restaurant",
+            img: "../asset/pri.jfif",
+            link: "prithvi-veg.html",
+          },
+          {
+            name: "Brindavan Restaurant",
+            img: "../asset/br.jfif",
+            link: "brindavana.html",
+          },
+        ];
+
+        const restaurantList = document.getElementById("restaurant-list");
+
+        restaurants.forEach((resto) => {
+          const card = document.createElement("div");
+          card.classList.add("col-md-3", "p-2");
+          card.innerHTML = `
+                <a href="${resto.link}" class="text-decoration-none">
+                    <div class="card">
+                        <img src="${resto.img}" alt="${resto.name}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">${resto.name}</h5>
+                        </div>
+                    </div>
+                </a>
+            `;
+          restaurantList.appendChild(card);
+        });
+      </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Company</h5>
+            <p>About Us, Contact Us, Privacy Policy</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Services</h5>
+            <p>Food in Bus, Group Order, Jain Food</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>Social Media Links</p>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2025 Sanchaari Canteen. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

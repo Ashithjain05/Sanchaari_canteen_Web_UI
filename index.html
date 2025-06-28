@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanchaari Canteen</title>
+    <link rel="stylesheet" href="s.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-img">
+        <img
+          src="./asset/sanchaari-modified.jfif"
+          alt="Sanchaari Canteen Logo" />
+      </div>
+      <div class="logo">Sanchaari Canteen</div>
+      <nav>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Route</a></li>
+          <li><a href="#">Restaurants</a></li>
+          <li><a href="#">Offers</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      </nav>
+      <div class="auth-buttons">
+        <div class="auth-buttons">
+          <button class="signup" onclick="openRegister()">Signup</button>
+        </div>
+      </div>
+    </header>
+    <div id="overlay" class="overlay hidden"></div>
+
+    <div id="registerModal" class="register-modal hidden">
+      <div class="register-content">
+        <img
+          src="./asset/sanchaari-modified.jfif"
+          alt="Logo"
+          class="register-logo" />
+        <h2>Get Food.<br />Wherever, Whenever.</h2>
+        <img
+          src="./asset/images (9).jfif"
+          alt="Family eating"
+          class="illustration" />
+
+        <a href="./public/register.html" class="register-btn">Register</a>
+        <a href="./public/login1.html" class="login-btn">Login</a>
+        <p><a href="./public/home.html">Continue without Registration</a></p>
+
+        <button class="close-btn" onclick="closeRegister()">X</button>
+      </div>
+    </div>
+    <script>
+      function openRegister() {
+        document.getElementById("overlay").classList.remove("hidden");
+        document.getElementById("registerModal").classList.remove("hidden");
+      }
+
+      function closeRegister() {
+        document.getElementById("overlay").classList.add("hidden");
+        document.getElementById("registerModal").classList.add("hidden");
+      }
+    </script>
+
+    <section class="hero">
+      <div class="hero-image"></div>
+    </section>
+
+    <section class="steps">
+      <h3>Order Food On Bus With Easy Steps</h3>
+      <div class="step-container">
+        <div class="step">
+          <img src="./asset/enter.jfif" alt="Bus" />
+          <p>Enter Bus Number</p>
+        </div>
+        <div class="step">
+          <img src="./asset/images.jfif" alt="Route" />
+          <p>Select Route and their Restaurants</p>
+        </div>
+        <div class="step">
+          <img
+            src="./asset/pngtree-flat-credit-card-payment-icon-with-mobile-banking-concept-vector-png-image_49899162.jfif"
+            alt="Payment" />
+          <p>Make Payments Online</p>
+        </div>
+        <div class="step">
+          <img
+            src="./asset/food-delivery-icon-fast-deliver-food-symbol-template-silhouette-design-for-mobile-app-and-website-restaurant-and-cafeteria-replaceable-design-illustration-vector.jfif"
+            alt="Delivery" />
+          <p>On Time Delivery</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h3>Categories</h3>
+      <div class="category-container">
+        <img src="./asset/download (1).jfif" alt="Category 1" />
+        <img src="./asset/non veg.jfif" alt="Category 2" />
+        <img src="./asset/images (3).jfif" alt="Category 3" />
+        <img src="./asset/jain food.jfif" alt="Category 4" />
+        <img src="./asset/MEAL.jfif" alt="Category 5" />
+        <img src="./asset/shawarmma.jfif" alt="Category 6" />
+      </div>
+    </section>
+
+    <section class="offers">
+      <h3>Offers</h3>
+      <div class="offers-container">
+        <img src="./asset/Screenshot (10).jfif" alt="Offer 1" />
+        <img src="./asset/Screenshot (.jfif" alt="Offer 2" />
+      </div>
+    </section>
+
+    <section class="review">
+      <div class="container review mt-4">
+        <h3>Review</h3>
+        <center>
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                "I was skeptical about ordering food while on a bus, but I was
+                pleasantly surprised!" - Joseph
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                "I ordered snacks and a drink, and they arrived warm. However,
+                there was a slight delay due to traffic." - Arun
+              </p>
+            </div>
+          </div>
+        </center>
+      </div>
+    </section>
+
+    <footer class="footer mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Company</h5>
+            <p>About Us, Contact Us, Privacy Policy</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Services</h5>
+            <p>Food in Bus, Group Order, Jain Food</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>Social Media Links</p>
+          </div>
+        </div>
+      </div>
+      <p>Copyright &copy; 2025 Sanchaari Canteen. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

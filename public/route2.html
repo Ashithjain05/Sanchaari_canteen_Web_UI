@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanchaari Canteen - Route Selection</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <img
+          src="../asset/sanchaari-modified.jfif"
+          alt="Sanchaari Canteen Logo" />
+      </div>
+      <div class="title">Sanchaari Canteen</div>
+      <nav>
+        <ul>
+          <li><a href="../public/home.html">Home</a></li>
+          <li><a href="#" class="active">Route</a></li>
+          <li><a href="../public/restau.html">Restaurants</a></li>
+          <li><a href="../public/offers.html">Offers</a></li>
+          <li><a href="../public/blog.html">Blogs</a></li>
+        </ul>
+        <div class="user-controls">
+          <img src="../asset/pic.jfif" id="userLogo" alt="User Logo" />
+          <button class="logout-btn">
+            <a href="../index.html" style="color: #ffffff">Logout</a>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Route Selection Section -->
+    <div class="container">
+      <div class="route-box">
+        <h2>Please Enter Your Bus Number, Source, and Destination</h2>
+        <input type="text" id="busNumber" placeholder="Enter Your Bus Number" />
+        <input
+          type="text"
+          id="sourceStation"
+          placeholder="Enter Your Source Bus Station" />
+        <input
+          type="text"
+          id="destinationStation"
+          placeholder="Enter Your Destination Bus Station" />
+
+        <!-- Route Dropdown -->
+        <select id="routeSelect">
+          <option value="">PLEASE SELECT ROUTE</option>
+          <option value="Route 1">Tiptur Route</option>
+          <option value="Route 2">Sira Route</option>
+        </select>
+
+        <!-- Bus Type Dropdown -->
+        <select id="busTypeSelect">
+          <option value="">PLEASE SELECT BUS TYPE</option>
+          <option value="AC">AC Bus</option>
+          <option value="Non-AC">Non-AC Bus</option>
+          <option value="Sleeper">Sleeper Bus</option>
+          <option value="Semi-Sleeper">Semi-Sleeper Bus</option>
+        </select>
+
+        <button class="food-btn" onclick="showFoodPoints()">
+          <a href="./ro.html">SHOW AVAILABLE FOOD POINTS</a>
+        </button>
+
+        <p>We will show you available food points on your selected route</p>
+      </div>
+    </div>
+
+    <script>
+      // Simulating user login info (Replace with backend data fetch)
+      const user = {
+        name: "Ashith",
+        logo: "user-logo.png", // Replace with actual user image path
+      };
+
+      // Dynamically update username and logo
+      document.getElementById("userName").textContent = user.name;
+      document.getElementById("userLogo").src = user.logo;
+
+      // Function to display selected options
+      function showFoodPoints() {
+        const busNumber = document.getElementById("busNumber").value;
+        const source = document.getElementById("sourceStation").value;
+        const destination = document.getElementById("destinationStation").value;
+        const route = document.getElementById("routeSelect").value;
+        const busType = document.getElementById("busTypeSelect").value;
+
+        if (!busNumber || !source || !destination || !route || !busType) {
+          alert("Please fill in all fields and select route and bus type.");
+          return;
+        }
+
+        alert(
+          `Showing food points for:\nBus: ${busNumber}\nRoute: ${route}\nBus Type: ${busType}`
+        );
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("/asset/Body.jpg") no-repeat center center/cover;
+  }
+
+  /* Header */
+  header {
+    background: #124d0d;
+    color: #ffc107;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo-container img {
+    width: 50px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin-left: 1px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  nav ul li a.active {
+    color: orange;
+  }
+
+  .user-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .user-controls img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  .logout-btn {
+    background: rgb(187, 7, 187);
+    color: rgb(252, 252, 252);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* Centering the form */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-top: 20px;
+  }
+
+  /* Form Box */
+  .route-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px; /* Ensure consistent width */
+  }
+
+  /* Input Fields and Dropdowns */
+  .route-box input,
+  .route-box select {
+    width: 100%; /* Ensures all elements have the same width */
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  /* Button */
+  .food-btn {
+    width: 100%; /* Same width as inputs */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: orange;
+    color: white;
+    border: none;
+    margin-top: 10px;
+  }
+
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 480px) {
+    .route-box {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  }
+</style>

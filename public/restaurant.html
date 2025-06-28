@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanchaari Canteen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            background-color: green !important;
+        }
+        .card {
+            background: #222;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        h2 {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sanchaari Canteen</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-center">Top Restaurants</h2>
+        <div class="row" id="restaurant-list">
+            <!-- Restaurant cards will be inserted here dynamically -->
+        </div>
+    </div>
+
+    <script>
+        const restaurants = [
+            { name: "Sri ShanthiSagar Hotel", img: "shanthisargar.jfif", link: "sri-shanthisagar.html" },
+            { name: "Udupi Krishna Bhojanalaya", img: "udupi.jfif", link: "udupi-krishna.html" },
+            { name: "Hotel Sudha", img: "sudha.jfif", link: "hotel-sudha.html" },
+            { name: "AI Hotel", img: "a1.jpg", link: "ai-hotel.html" },
+            { name: "Basil Leaf Hotel", img: "hotel5.jpg", link: "basil-leaf.html" },
+            { name: "Hotel Sunitha", img: "hotel6.jpg", link: "hotel-sunitha.html" },
+            { name: "BlueMoon Restaurant", img: "hotel7.jpg", link: "bluemoon.html" },
+            { name: "NAATI MANE", img: "hotel8.jpg", link: "naati-mane.html" },
+            { name: "Samudri Grand Veg", img: "hotel9.jpg", link: "samudri-grand.html" },
+            { name: "Tindi Box", img: "hotel10.jpg", link: "tindi-box.html" },
+            { name: "Veg Guru", img: "hotel11.jpg", link: "veg-guru.html" },
+            { name: "Bilal Hotel", img: "hotel12.jpg", link: "bilal-hotel.html" },
+            { name: "Jai Hind Hotel", img: "hotel13.jpg", link: "jai-hind.html" },
+            { name: "WoodLands Hotel", img: "hotel14.jpg", link: "woodlands.html" },
+            { name: "Prithvi Veg Restaurant", img: "hotel15.jpg", link: "prithvi-veg.html" },
+            { name: "Brindavan Restaurant", img: "hotel16.jpg", link: "brindavana.html" }
+        ];
+
+        const restaurantList = document.getElementById("restaurant-list");
+        
+        restaurants.forEach(resto => {
+            const card = document.createElement("div");
+            card.classList.add("col-md-3", "p-2");
+            card.innerHTML = `
+                <a href="${resto.link}" class="text-decoration-none">
+                    <div class="card">
+                        <img src="${resto.img}" alt="${resto.name}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-light">${resto.name}</h5>
+                        </div>
+                    </div>
+                </a>
+            `;
+            restaurantList.appendChild(card);
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

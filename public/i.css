@@ -1,0 +1,233 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inknut Antiqua', serif;
+}
+
+.header {
+    background-color: #0e4600;
+    height: 206px;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo-container {
+    margin-left: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 2.5vw;
+    color: #e39607;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-left: 20px;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 1.5vw;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #e39607;
+}
+
+.nav-link.active {
+    color: #de0004;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.profile-icon, .cart-icon {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+.username {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 1.5vw;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.logout-btn {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 1.5vw;
+    color: #fff;
+    background-color: #7349c7;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #5f3ba3;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.form-container {
+    background: #d9d9d9;
+    border-radius: 40px;
+    padding: 40px;
+    max-width: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-title {
+    font-size: 2.5vw;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-input {
+    height: 76px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 1.5vw;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    color: #000000;
+}
+
+.form-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+.form-select {
+    height: 76px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 1.5vw;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    color: #000000;
+    appearance: none;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.submit-btn {
+    height: 76px;
+    width: 100%;
+    max-width: 614px;
+    margin: 0 auto;
+    background: #ff990a;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e68a09;
+}
+
+.info-text {
+    font-size: 1.5vw;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Hover effects */
+.form-input:hover, .form-select:hover {
+    border-color: #666;
+}
+
+.form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: #ff990a;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 5vw;
+        margin: 10px 0;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 3vw;
+    }
+
+    .user-section {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .username, .logout-btn {
+        font-size: 3vw;
+    }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanchaari Canteen</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <img
+          src="../asset/sanchaari-modified.jfif"
+          alt="Sanchaari Canteen Logo" />
+      </div>
+      <div class="title">Sanchaari Canteen</div>
+      <nav>
+        <ul>
+          <li><a href="../public/home.html">Home</a></li>
+          <li><a href="../public/route2.html">Route</a></li>
+          <li><a href="../public/restau.html">Restaurants</a></li>
+          <li><a href="../public/offers.html">Offers</a></li>
+          <li><a href="../public/blog.html">Blogs</a></li>
+        </ul>
+        <div class="user-controls">
+          <img src="../asset/pic.jfif" id="userLogo" alt="User Logo" />
+          <button class="logout-btn">
+            <a href="/index.html" style="color: #ffffff; text-decoration: none"
+              >Logout</a
+            >
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div>
+      <!-- Restaurant Info -->
+      <div class="container mt-4">
+        <h3>SUNITHA HOTEL</h3>
+        <div class="d-flex">
+          <img src="../asset/sunitha.jfif" alt="Hotel Jai Hind" width="200" />
+          <div class="ms-3">
+            <p><strong>⭐ 19352+ Reviews</strong></p>
+            <p>Order before:- ⏰</p>
+            <p>Min Order:-99Rs</p>
+          </div>
+        </div>
+
+        <!-- Food Menu -->
+        <div class="row mt-4">
+          <div class="col-md-8">
+            <h4>Menu</h4>
+            <div id="menu-items">
+              <!-- Food items will be added dynamically -->
+            </div>
+          </div>
+
+          <!-- Cart Section -->
+          <div class="col-md-4">
+            <h4>Cart</h4>
+            <div id="cart" class="p-3 border bg-light">
+              <p>Cart is empty</p>
+            </div>
+            <h5 class="mt-3">Subtotal: ₹<span id="subtotal">0</span></h5>
+            <button class="btn btn-warning w-100 mt-2" id="book-now">
+              BOOK NOW
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Food items data
+        const menu = [
+          {
+            name: "Veg Deluxe Thali",
+            price: 263,
+            image: "../asset/images (3).jfif",
+          },
+          {
+            name: "Veg Maharaja Thali",
+            price: 270,
+            image: "../asset/veg thaali.jfif",
+          },
+          { name: "Jain Thali", price: 299, image: "../asset/jain food.jfif" },
+          {
+            name: "Paneer Butter Masala",
+            price: 230,
+            image: "../asset/butter.jfif",
+          },
+          { name: "Kadhai Paneer", price: 285, image: "../asset/kadai.jfif" },
+          { name: "Puliyogare", price: 50, image: "../asset/puli.jfif" },
+          { name: "Mosaranna", price: 50, image: "../asset/mos.jfif" },
+          {
+            name: "Bisi Bele Bath",
+            price: 50,
+            image: "../asset/download (4).jfif",
+          },
+          { name: "Roti", price: 30, image: "../asset/rotti.jfif" },
+        ];
+
+        // Load menu items
+        const menuContainer = document.getElementById("menu-items");
+
+        menu.forEach((item) => {
+          const menuItem = document.createElement("div");
+          menuItem.classList.add("menu-item");
+          menuItem.innerHTML = `
+    <div>
+        <h5>${item.name}</h5>
+        <p>₹${item.price}</p>
+    </div>
+    <img src="${item.image}" alt="${item.name}">
+    <button class="add-btn" onclick="addToCart('${item.name}', ${item.price}, '${item.image}')">ADD</button>
+`;
+          menuContainer.appendChild(menuItem);
+        });
+
+        // Cart functionality
+        const cart = [];
+        const cartContainer = document.getElementById("cart");
+        const subtotalEl = document.getElementById("subtotal");
+
+        function addToCart(name, price, image) {
+          const item = cart.find((i) => i.name === name);
+          if (item) {
+            item.quantity += 1;
+          } else {
+            cart.push({ name, price, image, quantity: 1 });
+          }
+          updateCart();
+        }
+
+        function removeFromCart(name) {
+          const itemIndex = cart.findIndex((i) => i.name === name);
+          if (itemIndex !== -1) {
+            if (cart[itemIndex].quantity > 1) {
+              cart[itemIndex].quantity -= 1;
+            } else {
+              cart.splice(itemIndex, 1);
+            }
+          }
+          updateCart();
+        }
+
+        function updateCart() {
+          cartContainer.innerHTML = "";
+          let subtotal = 0;
+
+          cart.forEach((item) => {
+            subtotal += item.price * item.quantity;
+
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+            <h6>${item.name}</h6>
+            <p>₹${item.price} x ${item.quantity}</p>
+            <button onclick="removeFromCart('${item.name}')" class="remove-btn">Remove item</button>
+        </div>
+    `;
+            cartContainer.appendChild(cartItem);
+          });
+
+          subtotalEl.innerText = subtotal;
+        }
+
+        // "Book Now" Button
+        document.getElementById("book-now").addEventListener("click", () => {
+          if (cart.length === 0) {
+            alert("Your cart is empty!");
+          } else {
+            const totalAmount = subtotalEl.innerText;
+            window.location.href = `paym.html?total=${totalAmount}`;
+          }
+        });
+      </script>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Company</h5>
+            <p>About Us, Contact Us, Privacy Policy</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Services</h5>
+            <p>Food in Bus, Group Order, Jain Food</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>Social Media Links</p>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2025 Sanchaari Canteen. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

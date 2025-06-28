@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #124d0d;
+  color: #ffc107;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-container img {
+  width: 50px;
+}
+
+.title {
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-left: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-top: 3%;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a.active {
+  color: orange;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-controls img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.logout-btn {
+  background: rgb(187, 7, 187);
+  color: rgb(252, 252, 252);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+* Route Container */ .route-container {
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  margin-top: 20px;
+}
+
+/* Route Styling */
+.route {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-top: 0%;
+  margin-left: 5%;
+  background: rgb(121, 178, 182);
+  padding: 10px;
+  border: 2px solid #5f632d;
+}
+
+.station {
+  font-size: 20px;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.arrow {
+  font-size: 70px;
+  color: black;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 5%;
+  text-align: center;
+  bottom: 0%;
+}
+
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer h5 {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin-bottom: 5px;
+}
+.restaurant-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.restaurant-card img {
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.restaurant-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.restaurant-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
